@@ -1,34 +1,12 @@
-name: Cypress Tests with installation job
-
+name: End-to-end tests
 on: [push]
-
 jobs:
-  install:
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
+  cypress-run:
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-#       - name: Save build folder
-#         uses: actions/upload-artifact@v2
-#         with:
-#           name: build
-#           if-no-files-found: error
-#           path: build
-      - name: Install dependencies
-        run: |
-            if [ -e yarn.lock ]; then
-            yarn install --frozen-lockfile
-            elif [ -e package-lock.json ]; then
-            npm ci
-            else
-            npm i
-            fi
-
-      - name: Cypress install
-        uses: cypress-io/github-action@v4 # use the explicit version number
-        with:
-          # Disable running of tests within install job
-          runTests: false
-          build: yarn build
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
