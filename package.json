@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:tests": "cypress run",
-    "test": "npm run scripts"
+    "test": "npm install"
   },
   "author": "Temmy",
   "license": "ISC",
