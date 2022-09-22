@@ -170,5 +170,13 @@
     "wrappy": "^1.0.2",
     "verror": "^1.10.0",
     "yauzl": "^2.10.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gr8tit/Mostly-AI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gr8tit/Mostly-AI/issues"
+  },
+  "homepage": "https://github.com/gr8tit/Mostly-AI#readme"
 }
