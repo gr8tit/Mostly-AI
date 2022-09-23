@@ -10,11 +10,14 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
-      - name: npm install, and test
-        run: |
-          npm install
-          npm run start:test &
-          npx cypress run --browser chrome
+        with:
+          build: npm run build
+          start: npm install
+          steps: npm install
+          name: npm install, and test
+          run: |
+             npm run start:test &
+             npx cypress run --browser chrome
 #         with:
 #           record: true
         env:
