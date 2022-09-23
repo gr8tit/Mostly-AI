@@ -7,15 +7,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
+      - name: Install dependencies
+        uses: cypress-io/github-action@v2
         with:
-          build: npm run build
-          start: npm install
-          steps: npm install
-          name: npm install, and test
-          run: |
+          # just perform install
+          runTests: |
              npm run start:test &
              npx cypress run --browser chrome
 #         with:
