@@ -10,8 +10,13 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
-        with:
-          record: true
+      - name: npm install, and test
+        run: |
+          npm install
+          npm run start:test &
+          npx cypress run --browser chrome
+#         with:
+#           record: true
         env:
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
