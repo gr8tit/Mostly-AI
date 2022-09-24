@@ -6,7 +6,11 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:tests": "cypress run",
+<<<<<<< HEAD
     "test": "npx run"
+=======
+    "test": "npm install"
+>>>>>>> main
   },
   "author": "Temmy",
   "license": "ISC",
