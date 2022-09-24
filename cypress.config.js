@@ -14,13 +14,13 @@ module.exports = defineConfig({
   reporter: "junit",
 
    reporterOptions: {
-    mochaFile: 'results/my-test-output.xml',
+    mochaFile: 'results/my-test-output.[hash].xml',
     toConsole: true
 
   },
 
   e2e: {
-    supportFile: 'cypress/support/e2e.js',
+    supportFile: false,
     specPattern: 'e2e/**/*.cy.{js,jsx,ts,tsx}',
     setupNodeEvents(on, config) {
       // implement node event listeners here
