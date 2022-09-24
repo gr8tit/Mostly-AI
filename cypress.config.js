@@ -13,11 +13,15 @@ module.exports = defineConfig({
   projectId: "93jsp2",
   reporter: "junit",
 
-  reporterOptions: {
-    mochaFile: "results/my-test-output-[hash].xml",
+   reporterOptions: {
+    mochaFile: 'results/my-test-output.xml',
+    toConsole: true
+
   },
 
   e2e: {
+    supportFile: 'support/e2e.js',
+    specPattern: 'e2e/**/*.cy.{js,jsx,ts,tsx}',
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
